@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday 💙</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    background:linear-gradient(to bottom,#000814,#001d3d);
+    font-family:'Poppins', sans-serif;
+    color:white;
+    overflow:hidden;
+}
+
+/* 🔐 PASSWORD */
+#lock{
+    position:fixed;
+    inset:0;
+    background:#000814;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:10;
+}
+
+#lock input{
+    padding:10px;
+    border-radius:20px;
+    border:none;
+    text-align:center;
+    font-size:14px;
+    margin-bottom:12px;
+}
+
+/* MAIN */
+#content{
+    display:none;
+    height:100vh;
+}
+
+/* CENTER */
+.container{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    padding:16px;
+}
+
+/* PHOTO */
+.photo{
+    width:65vw;
+    max-width:220px;
+    border-radius:18px;
+    box-shadow:0 0 20px #4cc9f0;
+}
+
+/* TEXT */
+h1{
+    font-size:22px;
+    font-weight:400;
+    color:#4cc9f0;
+    margin:6px 0;
+    text-align:center;
+}
+
+/* BUTTONS */
+.nav-btn{
+    padding:10px 22px;
+    border:none;
+    border-radius:25px;
+    background:#4cc9f0;
+    color:black;
+    font-size:14px;
+    cursor:pointer;
+}
+
+/* BALLOONS */
+.balloon{
+    position:absolute;
+    bottom:-80px;
+    width:28px;
+    height:40px;
+    background:#4cc9f0;
+    border-radius:50%;
+    opacity:0.5;
+    animation: float 14s linear infinite;
+}
+@keyframes float{
+    to{ transform:translateY(-120vh); }
+}
+
+/* FIREWORK */
+.firework{
+    position:absolute;
+    width:6px;
+    height:6px;
+    background:#4cc9f0;
+    border-radius:50%;
+    animation: explode 1.8s infinite;
+}
+@keyframes explode{
+    to{ transform:scale(12); opacity:0; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🔐 PASSWORD -->
+<div id="lock">
+    <h3>🔐 Enter Password</h3>
+    <input type="password" id="pass" placeholder="Password">
+    <button class="nav-btn" onclick="unlock()">Unlock 💙</button>
+</div>
+
+<!-- 🎉 CONTENT -->
+<div id="content">
+
+<!-- 🎵 MUSIC -->
+<audio id="bgMusic" autoplay loop playsinline>
+  <source src="Birthday.mp3" type="audio/mpeg">
+</audio>
+
+<!-- BALLOONS -->
+<div class="balloon" style="left:10%"></div>
+<div class="balloon" style="left:30%;animation-duration:12s"></div>
+<div class="balloon" style="left:55%;animation-duration:16s"></div>
+<div class="balloon" style="left:75%;animation-duration:13s"></div>
+
+<!-- FIREWORKS -->
+<div class="firework" style="top:18%; left:20%"></div>
+<div class="firework" style="top:25%; left:70%; animation-delay:.6s"></div>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+    <img src="69722.jpg" class="photo" alt="Happy Birthday">
+
+    <h1>Happy Birthday Abhishek ❤️💋</h1>
+    <h3>To the one who holds my heart, Happy Birthday! May your day be as amazing and beautiful as you are 💖</h3>
+    <h2>Love You Always!</h2>
+    
+
+    <a href="memories.html">
+        <button class="nav-btn">📸 Memories</button>
+    </a>
+
+    <a href="letter.html">
+        <button class="nav-btn">💌 Letter</button>
+    </a>
+</div>
+
+</div>
+
+<script>
+const PASSWORD = "abhishek27";
+
+function unlock(){
+    if(pass.value === PASSWORD){
+        lock.style.display="none";
+        content.style.display="block";
+        document.getElementById("bgMusic").play();
+    } else {
+        alert("Wrong password 😜");
+    }
+}
+</script>
+
+</body>
+</html>

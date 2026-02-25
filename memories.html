@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memories 💙</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:black;
+    color:#cfe8ff;
+    text-align:center;
+}
+#frame{
+    width:260px;
+    height:360px;
+    margin:30px auto;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 0 30px #1e90ff;
+}
+#frame img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+p{
+    max-width:90%;
+    margin:auto;
+    font-size:18px;
+    line-height:1.6;
+}
+a{color:#7ecbff;text-decoration:none;}
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+    <source src="Birthday.mp3" type="audio/mpeg">
+</audio>
+
+<h1>📸 Our Memories</h1>
+
+<div id="frame">
+    <img id="slide" src="69723.jpg">
+</div>
+
+<p>
+Every picture here is a piece of my heart.  
+With you, even ordinary moments turn into memories I want to keep forever.
+Thank you for being my happiness, my comfort, and my favourite person 💙
+</p>
+
+<a href="letter.html">Read My Letter →</a>
+
+<script>
+let photos=[
+"69723.jpg","69716.jpg","69727.jpg","69728.jpg","69863.jpg"
+"69855.jpg","69724.jpg","69715.jpg","69854.jpg","69856.jpg"
+];
+let i=0;
+setInterval(()=>{
+    i=(i+1)%photos.length;
+    slide.src=photos[i];
+},2500);
+</script>
+
+</body>
+</html>
