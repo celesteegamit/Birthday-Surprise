@@ -55,18 +55,23 @@ Thank you for being my happiness, my comfort, and my favourite person 💙
 </p>
 
 <a href="letter.html">Read My Letter →</a>
-
+<img id="memory" width="300">
 <script>
 let photos=[
 "69723.jpg","69716.jpg","69727.jpg","69728.jpg","69863.jpg"
 "69855.jpg","69724.jpg","69715.jpg","69854.jpg","69856.jpg"
 ];
 let i=0;
-setInterval(()=>{
-    i=(i+1)%photos.length;
-    slide.src=photos[i];
-},2500);
+function showNextPhoto() {
+    document.getElementById("memory").src=photos[i];
+    i++;
+    if(i>=photos.length) {
+        i=0;
+    }
+}
+    setInterval(showNextPhoto,2000);
 </script>
 
 </body>
+
 </html>
