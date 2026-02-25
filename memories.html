@@ -65,6 +65,7 @@ let photos=[
 let i=0;
 
 function showNextPhoto(){
+    console.log("Changing to:", photos[i]);
     document.getElementById("slide").src=photos[i];
     i++;
     if(i>=photos.length){
@@ -78,4 +79,5 @@ setInterval(showNextPhoto,2000);
 </body>
 
 </html>
+
 
