@@ -10,11 +10,11 @@
 <style>
 body{
     margin:0;
-    height:100vh;
+    min-height:100vh;
     background:linear-gradient(to bottom,#000814,#001d3d);
     font-family:'Poppins', sans-serif;
     color:white;
-    overflow:hidden;
+    overflow-x:hidden;   /* allow vertical scroll */
 }
 
 /* 🔐 PASSWORD */
@@ -27,6 +27,8 @@ body{
     justify-content:center;
     align-items:center;
     z-index:10;
+    padding:20px;
+    text-align:center;
 }
 
 #lock input{
@@ -36,29 +38,32 @@ body{
     text-align:center;
     font-size:14px;
     margin-bottom:12px;
+    width:200px;
+    max-width:80%;
 }
 
 /* MAIN */
 #content{
     display:none;
-    height:100vh;
+    min-height:100vh;
 }
 
 /* CENTER */
 .container{
-    height:100vh;
+    min-height:100vh;
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
     gap:12px;
-    padding:16px;
+    padding:20px;
+    text-align:center;
 }
 
 /* PHOTO */
 .photo{
-    width:65vw;
-    max-width:220px;
+    width:70vw;
+    max-width:240px;
     border-radius:18px;
     box-shadow:0 0 20px #4cc9f0;
 }
@@ -69,7 +74,19 @@ h1{
     font-weight:400;
     color:#4cc9f0;
     margin:6px 0;
-    text-align:center;
+}
+
+h2{
+    font-size:18px;
+    margin:4px 0;
+}
+
+h3{
+    font-size:14px;
+    font-weight:300;
+    margin:4px 0;
+    line-height:1.4;
+    max-width:90%;
 }
 
 /* BUTTONS */
@@ -81,6 +98,33 @@ h1{
     color:black;
     font-size:14px;
     cursor:pointer;
+    width:160px;
+    max-width:80%;
+}
+
+/* MOBILE OPTIMIZATION */
+@media(max-width:480px){
+
+    h1{
+        font-size:18px;
+    }
+
+    h2{
+        font-size:16px;
+    }
+
+    h3{
+        font-size:13px;
+    }
+
+    .nav-btn{
+        font-size:13px;
+        padding:8px 18px;
+    }
+
+    .photo{
+        width:80vw;
+    }
 }
 
 /* BALLOONS */
@@ -175,4 +219,5 @@ function unlock(){
 </script>
 
 </body>
+
 </html>
